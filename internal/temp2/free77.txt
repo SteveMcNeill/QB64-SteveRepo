@@ -1,0 +1,7 @@
+if(oldstr132411){
+if(oldstr132411->fixed)qbs_set(oldstr132411,_SUB_PREPARSE_STRING_E);
+qbs_free(_SUB_PREPARSE_STRING_E);
+}
+qbs_free(_SUB_PREPARSE_STRING_T);
+qbs_free(_SUB_PREPARSE_STRING_COMP);
+qbs_free(_SUB_PREPARSE_STRING_BIN);

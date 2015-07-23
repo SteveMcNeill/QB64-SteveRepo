@@ -1,0 +1,4 @@
+if(oldstr132633){
+if(oldstr132633->fixed)qbs_set(oldstr132633,_FUNC_VRGBS_STRING_TEXT);
+qbs_free(_FUNC_VRGBS_STRING_TEXT);
+}

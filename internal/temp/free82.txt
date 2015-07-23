@@ -1,0 +1,4 @@
+if(oldstr3310){
+if(oldstr3310->fixed)qbs_set(oldstr3310,_FUNC_QUOTEDFILENAME_STRING_F);
+qbs_free(_FUNC_QUOTEDFILENAME_STRING_F);
+}

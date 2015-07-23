@@ -1,0 +1,9 @@
+if(oldstr131746){
+if(oldstr131746->fixed)qbs_set(oldstr131746,_SUB_INSERTELEMENTS_STRING_A);
+qbs_free(_SUB_INSERTELEMENTS_STRING_A);
+}
+if(oldstr131747){
+if(oldstr131747->fixed)qbs_set(oldstr131747,_SUB_INSERTELEMENTS_STRING_ELEMENTS);
+qbs_free(_SUB_INSERTELEMENTS_STRING_ELEMENTS);
+}
+qbs_free(_SUB_INSERTELEMENTS_STRING_A2);
