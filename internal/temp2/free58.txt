@@ -1,9 +1,0 @@
-if(oldstr132292){
-if(oldstr132292->fixed)qbs_set(oldstr132292,_SUB_XWRITE_STRING_CA);
-qbs_free(_SUB_XWRITE_STRING_CA);
-}
-qbs_free(_SUB_XWRITE_STRING_L);
-qbs_free(_SUB_XWRITE_STRING_U);
-qbs_free(_SUB_XWRITE_STRING_E);
-qbs_free(_SUB_XWRITE_STRING_A2);
-qbs_free(_SUB_XWRITE_STRING_EBAK);

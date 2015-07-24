@@ -1,4 +1,0 @@
-if(oldstr132538){
-if(oldstr132538->fixed)qbs_set(oldstr132538,_FUNC_CHECK_STRING_INSTRING);
-qbs_free(_FUNC_CHECK_STRING_INSTRING);
-}

@@ -1,4 +1,0 @@
-if(oldstr2616){
-if(oldstr2616->fixed)qbs_set(oldstr2616,_SUB_MAKEIDREFER_STRING_REF);
-qbs_free(_SUB_MAKEIDREFER_STRING_REF);
-}

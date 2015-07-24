@@ -1,6 +1,0 @@
-if(oldstr132355){
-if(oldstr132355->fixed)qbs_set(oldstr132355,_SUB_BUILD_STRING_PATH);
-qbs_free(_SUB_BUILD_STRING_PATH);
-}
-qbs_free(_SUB_BUILD_STRING_C);
-qbs_free(_SUB_BUILD_STRING_RETURN_PATH);

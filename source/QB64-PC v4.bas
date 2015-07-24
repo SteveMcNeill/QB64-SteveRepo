@@ -2817,9 +2817,9 @@ DO
                 temp$ = LTRIM$(MID$(temp$, 3)) 'strip off the IF and extra spaces
                 temp$ = RTRIM$(LEFT$(temp$, LEN(temp$) - 4)) 'and strip off the THEN and extra spaces
                 temp = INSTR(temp$, "=")
-                IF temp = 0 THEN layout$ = "$ELSE IF " + temp$ + " THEN": GOTO finishednonexec 'no = sign in the $IF statement, so we're going to assume the user is doing something like $IF flag
+                IF temp = 0 THEN layout$ = "$ELSEIF " + temp$ + " THEN": GOTO finishednonexec 'no = sign in the $IF statement, so we're going to assume the user is doing something like $IF flag
                 l$ = RTRIM$(LEFT$(temp$, temp - 1)): r$ = LTRIM$(MID$(temp$, temp + 1))
-                layout$ = "$ELSE IF " + l$ + " = " + r$ + " THEN"
+                layout$ = "$ELSEIF " + l$ + " = " + r$ + " THEN"
                 GOTO finishednonexec
             END IF
         END IF

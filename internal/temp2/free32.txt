@@ -1,8 +1,0 @@
-if(oldstr131871){
-if(oldstr131871->fixed)qbs_set(oldstr131871,_FUNC_OPERATORUSAGE_STRING_OPERATOR);
-qbs_free(_FUNC_OPERATORUSAGE_STRING_OPERATOR);
-}
-if(oldstr131872){
-if(oldstr131872->fixed)qbs_set(oldstr131872,_FUNC_OPERATORUSAGE_STRING_INFO);
-qbs_free(_FUNC_OPERATORUSAGE_STRING_INFO);
-}

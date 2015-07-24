@@ -1,4 +1,0 @@
-if(oldstr131893){
-if(oldstr131893->fixed)qbs_set(oldstr131893,_FUNC_SYMBOLTYPE_STRING_S);
-qbs_free(_FUNC_SYMBOLTYPE_STRING_S);
-}

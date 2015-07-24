@@ -1,4 +1,0 @@
-if(oldstr2617){
-if(oldstr2617->fixed)qbs_set(oldstr2617,_FUNC_NUMELEMENTS_STRING_A);
-qbs_free(_FUNC_NUMELEMENTS_STRING_A);
-}

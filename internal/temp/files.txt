@@ -1,3 +1,0 @@
-$IF-test.bas
-PC - test v4.bas
-sortlib.bas

@@ -1,5 +1,0 @@
-if(oldstr133958){
-if(oldstr133958->fixed)qbs_set(oldstr133958,_SUB_HELP_ADDTXT_STRING_T);
-qbs_free(_SUB_HELP_ADDTXT_STRING_T);
-}
-qbs_free(_SUB_HELP_ADDTXT_STRING_B);

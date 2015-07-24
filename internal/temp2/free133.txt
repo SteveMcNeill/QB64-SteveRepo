@@ -1,5 +1,0 @@
-if(oldstr133441){
-if(oldstr133441->fixed)qbs_set(oldstr133441,_SUB_IDESAVE_STRING_F);
-qbs_free(_SUB_IDESAVE_STRING_F);
-}
-qbs_free(_SUB_IDESAVE_STRING_A);
