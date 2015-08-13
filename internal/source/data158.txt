@@ -1,188 +1,159 @@
-int32 *_FUNC_IDEANDROIDBOX_LONG_IDEANDROIDBOX=NULL;
-if(_FUNC_IDEANDROIDBOX_LONG_IDEANDROIDBOX==NULL){
-_FUNC_IDEANDROIDBOX_LONG_IDEANDROIDBOX=(int32*)mem_static_malloc(4);
-*_FUNC_IDEANDROIDBOX_LONG_IDEANDROIDBOX=0;
+qbs*oldstr4505=NULL;
+if(_SUB_IDEMESSAGEBOX_STRING_TITLESTR->tmp||_SUB_IDEMESSAGEBOX_STRING_TITLESTR->fixed||_SUB_IDEMESSAGEBOX_STRING_TITLESTR->readonly){
+oldstr4505=_SUB_IDEMESSAGEBOX_STRING_TITLESTR;
+if (oldstr4505->cmem_descriptor){
+_SUB_IDEMESSAGEBOX_STRING_TITLESTR=qbs_new_cmem(oldstr4505->len,0);
+}else{
+_SUB_IDEMESSAGEBOX_STRING_TITLESTR=qbs_new(oldstr4505->len,0);
 }
-int32 *_FUNC_IDEANDROIDBOX_LONG_FOCUS=NULL;
-if(_FUNC_IDEANDROIDBOX_LONG_FOCUS==NULL){
-_FUNC_IDEANDROIDBOX_LONG_FOCUS=(int32*)mem_static_malloc(4);
-*_FUNC_IDEANDROIDBOX_LONG_FOCUS=0;
+memcpy(_SUB_IDEMESSAGEBOX_STRING_TITLESTR->chr,oldstr4505->chr,oldstr4505->len);
 }
-void *_FUNC_IDEANDROIDBOX_UDT_P=NULL;
-if(_FUNC_IDEANDROIDBOX_UDT_P==NULL){
-_FUNC_IDEANDROIDBOX_UDT_P=(void*)mem_static_malloc(20);
-memset(_FUNC_IDEANDROIDBOX_UDT_P,0,20);
+qbs*oldstr4506=NULL;
+if(_SUB_IDEMESSAGEBOX_STRING_MESSAGESTR->tmp||_SUB_IDEMESSAGEBOX_STRING_MESSAGESTR->fixed||_SUB_IDEMESSAGEBOX_STRING_MESSAGESTR->readonly){
+oldstr4506=_SUB_IDEMESSAGEBOX_STRING_MESSAGESTR;
+if (oldstr4506->cmem_descriptor){
+_SUB_IDEMESSAGEBOX_STRING_MESSAGESTR=qbs_new_cmem(oldstr4506->len,0);
+}else{
+_SUB_IDEMESSAGEBOX_STRING_MESSAGESTR=qbs_new(oldstr4506->len,0);
 }
-ptrszint *_FUNC_IDEANDROIDBOX_ARRAY_UDT_O=NULL;
-if (!_FUNC_IDEANDROIDBOX_ARRAY_UDT_O){
-_FUNC_IDEANDROIDBOX_ARRAY_UDT_O=(ptrszint*)mem_static_malloc(9*ptrsz);
+memcpy(_SUB_IDEMESSAGEBOX_STRING_MESSAGESTR->chr,oldstr4506->chr,oldstr4506->len);
+}
+int32 *_SUB_IDEMESSAGEBOX_LONG_FOCUS=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_FOCUS==NULL){
+_SUB_IDEMESSAGEBOX_LONG_FOCUS=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_FOCUS=0;
+}
+void *_SUB_IDEMESSAGEBOX_UDT_P=NULL;
+if(_SUB_IDEMESSAGEBOX_UDT_P==NULL){
+_SUB_IDEMESSAGEBOX_UDT_P=(void*)mem_static_malloc(20);
+memset(_SUB_IDEMESSAGEBOX_UDT_P,0,20);
+}
+ptrszint *_SUB_IDEMESSAGEBOX_ARRAY_UDT_O=NULL;
+if (!_SUB_IDEMESSAGEBOX_ARRAY_UDT_O){
+_SUB_IDEMESSAGEBOX_ARRAY_UDT_O=(ptrszint*)mem_static_malloc(9*ptrsz);
 new_mem_lock();
 mem_lock_tmp->type=4;
-((ptrszint*)_FUNC_IDEANDROIDBOX_ARRAY_UDT_O)[8]=(ptrszint)mem_lock_tmp;
-_FUNC_IDEANDROIDBOX_ARRAY_UDT_O[2]=0;
-_FUNC_IDEANDROIDBOX_ARRAY_UDT_O[4]=2147483647;
-_FUNC_IDEANDROIDBOX_ARRAY_UDT_O[5]=0;
-_FUNC_IDEANDROIDBOX_ARRAY_UDT_O[6]=0;
-_FUNC_IDEANDROIDBOX_ARRAY_UDT_O[0]=(ptrszint)nothingvalue;
+((ptrszint*)_SUB_IDEMESSAGEBOX_ARRAY_UDT_O)[8]=(ptrszint)mem_lock_tmp;
+_SUB_IDEMESSAGEBOX_ARRAY_UDT_O[2]=0;
+_SUB_IDEMESSAGEBOX_ARRAY_UDT_O[4]=2147483647;
+_SUB_IDEMESSAGEBOX_ARRAY_UDT_O[5]=0;
+_SUB_IDEMESSAGEBOX_ARRAY_UDT_O[6]=0;
+_SUB_IDEMESSAGEBOX_ARRAY_UDT_O[0]=(ptrszint)nothingvalue;
 }
-void *_FUNC_IDEANDROIDBOX_UDT_OO=NULL;
-if(_FUNC_IDEANDROIDBOX_UDT_OO==NULL){
-_FUNC_IDEANDROIDBOX_UDT_OO=(void*)mem_static_malloc(80);
-memset(_FUNC_IDEANDROIDBOX_UDT_OO,0,80);
+void *_SUB_IDEMESSAGEBOX_UDT_OO=NULL;
+if(_SUB_IDEMESSAGEBOX_UDT_OO==NULL){
+_SUB_IDEMESSAGEBOX_UDT_OO=(void*)mem_static_malloc(80);
+memset(_SUB_IDEMESSAGEBOX_UDT_OO,0,80);
 }
-qbs *_FUNC_IDEANDROIDBOX_STRING1_SEP=NULL;
-if(_FUNC_IDEANDROIDBOX_STRING1_SEP==NULL){
-_FUNC_IDEANDROIDBOX_STRING1_SEP=qbs_new_fixed((uint8*)mem_static_malloc(1),1,0);
-memset(_FUNC_IDEANDROIDBOX_STRING1_SEP->chr,0,1);
+qbs *_SUB_IDEMESSAGEBOX_STRING1_SEP=NULL;
+if(_SUB_IDEMESSAGEBOX_STRING1_SEP==NULL){
+_SUB_IDEMESSAGEBOX_STRING1_SEP=qbs_new_fixed((uint8*)mem_static_malloc(1),1,0);
+memset(_SUB_IDEMESSAGEBOX_STRING1_SEP->chr,0,1);
 }
-int32 *_FUNC_IDEANDROIDBOX_LONG_I=NULL;
-if(_FUNC_IDEANDROIDBOX_LONG_I==NULL){
-_FUNC_IDEANDROIDBOX_LONG_I=(int32*)mem_static_malloc(4);
-*_FUNC_IDEANDROIDBOX_LONG_I=0;
+int32 *_SUB_IDEMESSAGEBOX_LONG_I=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_I==NULL){
+_SUB_IDEMESSAGEBOX_LONG_I=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_I=0;
 }
-int32 pass4523;
-int32 pass4524;
-qbs *_FUNC_IDEANDROIDBOX_STRING_A2=NULL;
-if (!_FUNC_IDEANDROIDBOX_STRING_A2)_FUNC_IDEANDROIDBOX_STRING_A2=qbs_new(0,0);
-byte_element_struct *byte_element_4525=NULL;
-if (!byte_element_4525){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4525=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4525=(byte_element_struct*)mem_static_malloc(12);
+int32 *_SUB_IDEMESSAGEBOX_LONG_W=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_W==NULL){
+_SUB_IDEMESSAGEBOX_LONG_W=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_W=0;
 }
-int64 fornext_value4527;
-int64 fornext_finalvalue4527;
-int64 fornext_step4527;
-uint8 fornext_step_negative4527;
-int32 *_FUNC_IDEANDROIDBOX_LONG_F=NULL;
-if(_FUNC_IDEANDROIDBOX_LONG_F==NULL){
-_FUNC_IDEANDROIDBOX_LONG_F=(int32*)mem_static_malloc(4);
-*_FUNC_IDEANDROIDBOX_LONG_F=0;
+byte_element_struct *byte_element_4507=NULL;
+if (!byte_element_4507){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4507=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4507=(byte_element_struct*)mem_static_malloc(12);
 }
-int32 *_FUNC_IDEANDROIDBOX_LONG_CX=NULL;
-if(_FUNC_IDEANDROIDBOX_LONG_CX==NULL){
-_FUNC_IDEANDROIDBOX_LONG_CX=(int32*)mem_static_malloc(4);
-*_FUNC_IDEANDROIDBOX_LONG_CX=0;
+int32 *_SUB_IDEMESSAGEBOX_LONG_W2=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_W2==NULL){
+_SUB_IDEMESSAGEBOX_LONG_W2=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_W2=0;
 }
-int32 *_FUNC_IDEANDROIDBOX_LONG_CY=NULL;
-if(_FUNC_IDEANDROIDBOX_LONG_CY==NULL){
-_FUNC_IDEANDROIDBOX_LONG_CY=(int32*)mem_static_malloc(4);
-*_FUNC_IDEANDROIDBOX_LONG_CY=0;
+byte_element_struct *byte_element_4508=NULL;
+if (!byte_element_4508){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4508=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4508=(byte_element_struct*)mem_static_malloc(12);
 }
-int64 fornext_value4530;
-int64 fornext_finalvalue4530;
-int64 fornext_step4530;
-uint8 fornext_step_negative4530;
-int32 *_FUNC_IDEANDROIDBOX_LONG_LASTFOCUS=NULL;
-if(_FUNC_IDEANDROIDBOX_LONG_LASTFOCUS==NULL){
-_FUNC_IDEANDROIDBOX_LONG_LASTFOCUS=(int32*)mem_static_malloc(4);
-*_FUNC_IDEANDROIDBOX_LONG_LASTFOCUS=0;
+int32 pass4509;
+int64 fornext_value4511;
+int64 fornext_finalvalue4511;
+int64 fornext_step4511;
+uint8 fornext_step_negative4511;
+int32 *_SUB_IDEMESSAGEBOX_LONG_F=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_F==NULL){
+_SUB_IDEMESSAGEBOX_LONG_F=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_F=0;
 }
-int32 *_FUNC_IDEANDROIDBOX_LONG_CHANGE=NULL;
-if(_FUNC_IDEANDROIDBOX_LONG_CHANGE==NULL){
-_FUNC_IDEANDROIDBOX_LONG_CHANGE=(int32*)mem_static_malloc(4);
-*_FUNC_IDEANDROIDBOX_LONG_CHANGE=0;
+int32 *_SUB_IDEMESSAGEBOX_LONG_CX=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_CX==NULL){
+_SUB_IDEMESSAGEBOX_LONG_CX=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_CX=0;
 }
-int32 *_FUNC_IDEANDROIDBOX_LONG_MOUSEDOWN=NULL;
-if(_FUNC_IDEANDROIDBOX_LONG_MOUSEDOWN==NULL){
-_FUNC_IDEANDROIDBOX_LONG_MOUSEDOWN=(int32*)mem_static_malloc(4);
-*_FUNC_IDEANDROIDBOX_LONG_MOUSEDOWN=0;
+int32 *_SUB_IDEMESSAGEBOX_LONG_CY=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_CY==NULL){
+_SUB_IDEMESSAGEBOX_LONG_CY=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_CY=0;
 }
-int32 *_FUNC_IDEANDROIDBOX_LONG_MOUSEUP=NULL;
-if(_FUNC_IDEANDROIDBOX_LONG_MOUSEUP==NULL){
-_FUNC_IDEANDROIDBOX_LONG_MOUSEUP=(int32*)mem_static_malloc(4);
-*_FUNC_IDEANDROIDBOX_LONG_MOUSEUP=0;
+int64 fornext_value4514;
+int64 fornext_finalvalue4514;
+int64 fornext_step4514;
+uint8 fornext_step_negative4514;
+int32 *_SUB_IDEMESSAGEBOX_LONG_LASTFOCUS=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_LASTFOCUS==NULL){
+_SUB_IDEMESSAGEBOX_LONG_LASTFOCUS=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_LASTFOCUS=0;
 }
-int32 *_FUNC_IDEANDROIDBOX_LONG_ALT=NULL;
-if(_FUNC_IDEANDROIDBOX_LONG_ALT==NULL){
-_FUNC_IDEANDROIDBOX_LONG_ALT=(int32*)mem_static_malloc(4);
-*_FUNC_IDEANDROIDBOX_LONG_ALT=0;
+int32 *_SUB_IDEMESSAGEBOX_LONG_CHANGE=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_CHANGE==NULL){
+_SUB_IDEMESSAGEBOX_LONG_CHANGE=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_CHANGE=0;
 }
-int32 *_FUNC_IDEANDROIDBOX_LONG_OLDALT=NULL;
-if(_FUNC_IDEANDROIDBOX_LONG_OLDALT==NULL){
-_FUNC_IDEANDROIDBOX_LONG_OLDALT=(int32*)mem_static_malloc(4);
-*_FUNC_IDEANDROIDBOX_LONG_OLDALT=0;
+int32 *_SUB_IDEMESSAGEBOX_LONG_MOUSEDOWN=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_MOUSEDOWN==NULL){
+_SUB_IDEMESSAGEBOX_LONG_MOUSEDOWN=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_MOUSEDOWN=0;
 }
-qbs *_FUNC_IDEANDROIDBOX_STRING_ALTLETTER=NULL;
-if (!_FUNC_IDEANDROIDBOX_STRING_ALTLETTER)_FUNC_IDEANDROIDBOX_STRING_ALTLETTER=qbs_new(0,0);
-byte_element_struct *byte_element_4537=NULL;
-if (!byte_element_4537){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4537=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4537=(byte_element_struct*)mem_static_malloc(12);
+int32 *_SUB_IDEMESSAGEBOX_LONG_MOUSEUP=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_MOUSEUP==NULL){
+_SUB_IDEMESSAGEBOX_LONG_MOUSEUP=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_MOUSEUP=0;
 }
-int32 *_FUNC_IDEANDROIDBOX_LONG_K=NULL;
-if(_FUNC_IDEANDROIDBOX_LONG_K==NULL){
-_FUNC_IDEANDROIDBOX_LONG_K=(int32*)mem_static_malloc(4);
-*_FUNC_IDEANDROIDBOX_LONG_K=0;
+int32 *_SUB_IDEMESSAGEBOX_LONG_ALT=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_ALT==NULL){
+_SUB_IDEMESSAGEBOX_LONG_ALT=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_ALT=0;
 }
-int32 *_FUNC_IDEANDROIDBOX_LONG_INFO=NULL;
-if(_FUNC_IDEANDROIDBOX_LONG_INFO==NULL){
-_FUNC_IDEANDROIDBOX_LONG_INFO=(int32*)mem_static_malloc(4);
-*_FUNC_IDEANDROIDBOX_LONG_INFO=0;
+int32 *_SUB_IDEMESSAGEBOX_LONG_OLDALT=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_OLDALT==NULL){
+_SUB_IDEMESSAGEBOX_LONG_OLDALT=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_OLDALT=0;
 }
-int64 fornext_value4539;
-int64 fornext_finalvalue4539;
-int64 fornext_step4539;
-uint8 fornext_step_negative4539;
-int32 *_FUNC_IDEANDROIDBOX_LONG_T=NULL;
-if(_FUNC_IDEANDROIDBOX_LONG_T==NULL){
-_FUNC_IDEANDROIDBOX_LONG_T=(int32*)mem_static_malloc(4);
-*_FUNC_IDEANDROIDBOX_LONG_T=0;
+qbs *_SUB_IDEMESSAGEBOX_STRING_ALTLETTER=NULL;
+if (!_SUB_IDEMESSAGEBOX_STRING_ALTLETTER)_SUB_IDEMESSAGEBOX_STRING_ALTLETTER=qbs_new(0,0);
+byte_element_struct *byte_element_4517=NULL;
+if (!byte_element_4517){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4517=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4517=(byte_element_struct*)mem_static_malloc(12);
 }
-int32 *_FUNC_IDEANDROIDBOX_LONG_FOCUSOFFSET=NULL;
-if(_FUNC_IDEANDROIDBOX_LONG_FOCUSOFFSET==NULL){
-_FUNC_IDEANDROIDBOX_LONG_FOCUSOFFSET=(int32*)mem_static_malloc(4);
-*_FUNC_IDEANDROIDBOX_LONG_FOCUSOFFSET=0;
+int32 *_SUB_IDEMESSAGEBOX_LONG_K=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_K==NULL){
+_SUB_IDEMESSAGEBOX_LONG_K=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_K=0;
 }
-qbs *_FUNC_IDEANDROIDBOX_STRING_A=NULL;
-if (!_FUNC_IDEANDROIDBOX_STRING_A)_FUNC_IDEANDROIDBOX_STRING_A=qbs_new(0,0);
-byte_element_struct *byte_element_4540=NULL;
-if (!byte_element_4540){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4540=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4540=(byte_element_struct*)mem_static_malloc(12);
+int32 *_SUB_IDEMESSAGEBOX_LONG_INFO=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_INFO==NULL){
+_SUB_IDEMESSAGEBOX_LONG_INFO=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_INFO=0;
 }
-byte_element_struct *byte_element_4541=NULL;
-if (!byte_element_4541){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4541=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4541=(byte_element_struct*)mem_static_malloc(12);
+int64 fornext_value4519;
+int64 fornext_finalvalue4519;
+int64 fornext_step4519;
+uint8 fornext_step_negative4519;
+int32 *_SUB_IDEMESSAGEBOX_LONG_T=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_T==NULL){
+_SUB_IDEMESSAGEBOX_LONG_T=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_T=0;
 }
-int16 *_FUNC_IDEANDROIDBOX_INTEGER_V=NULL;
-if(_FUNC_IDEANDROIDBOX_INTEGER_V==NULL){
-_FUNC_IDEANDROIDBOX_INTEGER_V=(int16*)mem_static_malloc(2);
-*_FUNC_IDEANDROIDBOX_INTEGER_V=0;
-}
-qbs *_FUNC_IDEANDROIDBOX_STRING_V=NULL;
-if (!_FUNC_IDEANDROIDBOX_STRING_V)_FUNC_IDEANDROIDBOX_STRING_V=qbs_new(0,0);
-byte_element_struct *byte_element_4542=NULL;
-if (!byte_element_4542){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4542=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4542=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_4543=NULL;
-if (!byte_element_4543){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4543=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4543=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_4544=NULL;
-if (!byte_element_4544){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4544=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4544=(byte_element_struct*)mem_static_malloc(12);
-}
-qbs *_FUNC_IDEANDROIDBOX_STRING_V3=NULL;
-if (!_FUNC_IDEANDROIDBOX_STRING_V3)_FUNC_IDEANDROIDBOX_STRING_V3=qbs_new(0,0);
-byte_element_struct *byte_element_4545=NULL;
-if (!byte_element_4545){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4545=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4545=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_4546=NULL;
-if (!byte_element_4546){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4546=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4546=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_4547=NULL;
-if (!byte_element_4547){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4547=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4547=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_4548=NULL;
-if (!byte_element_4548){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4548=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4548=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_4549=NULL;
-if (!byte_element_4549){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4549=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4549=(byte_element_struct*)mem_static_malloc(12);
-}
-byte_element_struct *byte_element_4550=NULL;
-if (!byte_element_4550){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_4550=(byte_element_struct*)(mem_static_pointer-12); else byte_element_4550=(byte_element_struct*)mem_static_malloc(12);
+int32 *_SUB_IDEMESSAGEBOX_LONG_FOCUSOFFSET=NULL;
+if(_SUB_IDEMESSAGEBOX_LONG_FOCUSOFFSET==NULL){
+_SUB_IDEMESSAGEBOX_LONG_FOCUSOFFSET=(int32*)mem_static_malloc(4);
+*_SUB_IDEMESSAGEBOX_LONG_FOCUSOFFSET=0;
 }

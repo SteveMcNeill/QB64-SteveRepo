@@ -242,6 +242,15 @@ id.NoCloud = 1
 regid
 
 clearid
+id.n = "_SCREENHIDE"
+id.subfunc = 1
+id.callname = "func__screenhide"
+id.ret = LONGTYPE - ISPOINTER
+id.NoCloud = 1
+regid
+
+
+clearid
 id.n = "_CONSOLE"
 id.subfunc = 1
 id.callname = "func__console"
@@ -2121,6 +2130,16 @@ id.args = 1
 id.arg = MKL$(STRINGTYPE - ISPOINTER)
 id.ret = FLOATTYPE - ISPOINTER
 regid
+
+clearid
+id.n = "_VALINT"
+id.subfunc = 1
+id.callname = "func_valint"
+id.args = 1
+id.arg = MKL$(STRINGTYPE - ISPOINTER)
+id.ret = INTEGER64TYPE - ISPOINTER
+regid
+
 
 clearid
 id.n = "MKSMBF"

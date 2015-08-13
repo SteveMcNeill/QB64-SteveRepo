@@ -13933,6 +13933,9 @@ long double func_val(qbs *s){
   static int64 value;
   static int64 hex_value;
   static int32 hex_digits;
+  qbs *temp=qbs_new(0,0);
+  static qbs *ui64_limit=qbs_new_txt("18446744073709551616"); 
+
   if (!s->len) return 0;
   value=0;
   negate_exponent=0;
@@ -13942,7 +13945,7 @@ long double func_val(qbs *s){
   step=0;
   exponent_value=0;
   negate=0;
-
+  
   i=0;
   for (i=0;i<s->len;i++){
     c=s->chr[i];
@@ -13971,6 +13974,7 @@ long double func_val(qbs *s){
       if (step<=1){//before decimal point
     step=1;
     if ((num_significant_digits)||(c>48)){
+	  qbs_set(temp,qbs_add(temp,func_chr(c)));
       most_significant_digit_position++;
       significant_digits[num_significant_digits]=c;
       num_significant_digits++;
@@ -14016,6 +14020,28 @@ long double func_val(qbs *s){
 
   if (num_significant_digits==0) return 0;
 
+	if (step==1) {  //if we never got past step 1, it's an integer
+		if (num_significant_digits<20) {
+			if (num_significant_digits==19&&negate==1) { //if it's 19 digits and negative,
+				if (qbs_greaterthan(temp, qbs_new_txt("9223372036854775807"))) { //we need to see if it's smaller than what will fit in a signed integer64
+				   //if it is, we just fall on through and let it be processed as a float
+				}else{
+					return -value;  //otherwise we return the negative value
+				}
+			}else{ //it's either less than 19 digits or non-negative; return it.
+				if (negate) value=-value;
+				return value;
+			}
+		}
+		if (num_significant_digits==20&&negate==0) {if (qbs_lessthan(temp, ui64_limit)) return value;}
+	}
+
+
+    //adjust exponent value appropriately
+    //if most_significant_digit_position=1, then no change need occur
+    exponent_value=exponent_value+most_significant_digit_position-1;
+    //add exponent's value
+
   if (exponent_value==0){
     if (num_significant_digits==most_significant_digit_position){
       if (negate) value=-value;
@@ -14032,10 +14058,7 @@ long double func_val(qbs *s){
       built_number[i]=significant_digits[i2]; i++;
     }
     built_number[i]=69; i++;//E
-    //adjust exponent value appropriately
-    //if most_significant_digit_position=1, then no change need occur
-    exponent_value=exponent_value+most_significant_digit_position-1;
-    //add exponent's value
+
 #ifdef QB64_WINDOWS
     i2=sprintf((char*)&built_number[i],"%I64i",exponent_value);
 #else
@@ -14074,6 +14097,22 @@ long double func_val(qbs *s){
     }//i
     return hex_value;
   }
+  if ((c==66)||(c==98)){//"B"or"b"
+      hex_digits=0;
+      hex_value=0;
+      for (i=i+2;i<s->len;i++){
+      c=s->chr[i];
+      if ((c>47)&&(c<50)){//0-1
+          c-=48;
+          hex_value<<=1;
+          hex_value|=c;
+          if (hex_digits||c) hex_digits++; 
+          if (hex_digits>64){error(6); return 0;}
+      }else 
+	      break;
+      }//i
+      return hex_value;
+  }
   if ((c==72)||(c==104)){//"H"or"h"
     hex_digits=0;
     hex_value=0;
@@ -14095,6 +14134,107 @@ long double func_val(qbs *s){
   return 0;//& followied by unknown
 }
 
+int64 func_valint(qbs *s){
+  int32 i,i2,step,c;
+  int32 negate;
+  int64 value;
+  int64 hex_value;
+  int32 hex_digits;
+  int start;
+  if (!s->len) return 0;
+  value=0; step=0; negate=0; start = 0;
+
+  for (i=0;i<s->len;i++){
+    c=s->chr[i];
+
+    if ((c==32)||(c==9)) goto whitespace;
+
+    if (c==38){//&
+      if (step==0) goto hex;
+      goto finish;
+    }
+
+    if (c==45){//-
+      if (step==0){negate=1; step=1; goto checked;}
+      goto finish;
+    }
+
+    if (c==43){//+
+      if (step==0){step=1; goto checked;}
+      goto finish;
+    }
+
+    if ((c>=48)&&(c<=57)){//0-9
+		if (step<1) step=1;
+		if ((start)||(c>48)) {start=1; value=value*10+c-48;}
+        goto checked;
+    }
+
+    goto finish;//invalid character
+  checked:
+  whitespace:;
+  }
+ finish:;
+
+if (negate) value=-value;
+return value;
+
+ hex://hex/oct
+  if (i>=(s->len-2)) return 0;
+  c=s->chr[i+1];
+  if ((c==79)||(c==111)){//"O"or"o"
+    hex_digits=0;
+    hex_value=0;
+    for (i=i+2;i<s->len;i++){
+      c=s->chr[i];
+      if ((c>=48)&&(c<=55)){//0-7
+    c-=48;
+    hex_value<<=3;
+    hex_value|=c;
+    if (hex_digits||c) hex_digits++; 
+    if (hex_digits>=22){
+      if ((hex_digits>22)||(s->chr[i-21]>49)){error(6); return 0;}
+    }
+      }else break;
+    }//i
+    return hex_value;
+  }
+  if ((c==66)||(c==98)){//"B"or"b"
+      hex_digits=0;
+      hex_value=0;
+      for (i=i+2;i<s->len;i++){
+      c=s->chr[i];
+      if ((c>47)&&(c<50)){//0-1
+          c-=48;
+          hex_value<<=1;
+          hex_value|=c;
+          if (hex_digits||c) hex_digits++; 
+          if (hex_digits>64){error(6); return 0;}
+      }else 
+	      break;
+      }//i
+      return hex_value;
+  }
+  if ((c==72)||(c==104)){//"H"or"h"
+    hex_digits=0;
+    hex_value=0;
+    for (i=i+2;i<s->len;i++){
+      c=s->chr[i];
+      if ( ((c>=48)&&(c<=57)) || ((c>=65)&&(c<=70)) || ((c>=97)&&(c<=102)) ){//0-9 or A-F or a-f
+    if ((c>=48)&&(c<=57)) c-=48;
+    if ((c>=65)&&(c<=70)) c-=55;
+
+    if ((c>=97)&&(c<=102)) c-=87;
+    hex_value<<=4;
+    hex_value|=c;
+    if (hex_digits||c) hex_digits++;
+    if (hex_digits>16) {error(6); return 0;}
+      }else break;
+    }//i
+    return hex_value;
+  }
+  return 0;//& followied by unknown
+}
 
 
 
@@ -20788,6 +20928,11 @@ int32 func__printwidth(qbs* text, int32 screenhandle, int32 passed){
     static int32 fh,result;
     static int64 bytes;
     fh=gfs_open(f,1,0,0);
+
+	#ifdef QB64_WINDOWS //rather than just immediately tossing an error, let's try looking in the default OS folder for the font first in case the use left off the filepath.
+	    if (fh<0) {fh=gfs_open(qbs_add(qbs_new_txt_len("C:/Windows/Fonts/",17),f),1,0,0);}
+    #endif
+
     if (fh<0) return -1;
     bytes=gfs_lof(fh);
     static uint8* content;
@@ -28464,6 +28609,8 @@ void sub__maptriangle(int32 cull_options,float sx1,float sy1,float sx2,float sy2
     screen_hide=1;
   }
 
+  int32 func__screenhide(){return -screen_hide;}
+
   void sub__consoletitle(qbs* s){
     if (new_error) return;
     static qbs *sz=NULL; if (!sz) sz=qbs_new(0,0);
@@ -30092,10 +30239,6 @@ QB64_GAMEPAD_INIT();
     glutMotionFunc(GLUT_MOTION_FUNC);
     glutPassiveMotionFunc(GLUT_PASSIVEMOTION_FUNC);
     glutReshapeFunc(GLUT_RESHAPE_FUNC);
-
-#ifdef CORE_FREEGLUT
-    glutMouseWheelFunc(GLUT_MOUSEWHEEL_FUNC);
-#endif
 
     glutMainLoop();
 
@@ -33571,9 +33714,6 @@ else{
     glutMotionFunc(GLUT_MOTION_FUNC);
     glutPassiveMotionFunc(GLUT_PASSIVEMOTION_FUNC);
     glutReshapeFunc(GLUT_RESHAPE_FUNC);
-#ifdef CORE_FREEGLUT
-    glutMouseWheelFunc(GLUT_MOUSEWHEEL_FUNC);
-#endif
 
 #endif
   }

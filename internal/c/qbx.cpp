@@ -183,6 +183,7 @@ extern void sub_shell3(qbs *str,int32 passed);
 extern void sub__consoletitle(qbs*);
 extern void sub__screenshow();
 extern void sub__screenhide();
+extern int32 func__screenhide();
 extern void sub__console(int32);
 extern int32 func__console();
 extern void sub__controlchr(int32);
@@ -389,6 +390,7 @@ extern void qbg_sub_locate(int32 row,int32 column,int32 cursor,int32 start,int32
 extern int32 hexoct2uint64(qbs* h);
 extern void qbs_input(int32 numvariables,uint8 newline);
 extern long double func_val(qbs *s);
+extern int64 func_valint(qbs *s);
 extern void sub_out(int32 port,int32 data);
 extern void sub_randomize (double seed,int32 passed);
 extern float func_rnd(float n,int32 passed);
